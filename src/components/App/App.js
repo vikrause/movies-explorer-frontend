@@ -2,8 +2,9 @@ import {Route, Routes} from "react-router-dom";
 
 import React, {useState} from "react";
 import './App.css';
-import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
+import Main from "../Main/Main";
+import HeaderLayout from "../HeaderLayout/HeaderLayout";
 
 function App() {
     const [isSideMenuOpen, setSideMenuStatus] = useState(false);
@@ -21,7 +22,12 @@ function App() {
          <Routes>
              <Route
                  path="/"
-                 element={<Header onBurgerButtonClick={handleOpenSideMenu}/>}
+                 element={
+                 <HeaderLayout onBurgerButtonClick={handleOpenSideMenu}/>}
+             />
+             <Route
+                 index
+                 element={<Main />}
              />
          </Routes>
          <SideMenu isOpen={isSideMenuOpen} onClose={handleCloseSideMenu}/>

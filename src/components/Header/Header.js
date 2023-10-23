@@ -10,7 +10,7 @@ export default function Header({ onBurgerButtonClick }) {
         <header className="header">
             <Routes>
                 <Route
-                    path="/abob"
+                    path="/"
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
@@ -26,12 +26,12 @@ export default function Header({ onBurgerButtonClick }) {
                     }
                 />
                 <Route
-                    path="/"
+                    path="/movies"
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
-                            <HeaderNavigation />
-                            <HeaderAccountLink />
+                            <HeaderNavigation/>
+                            <HeaderAccountLink/>
                             <button className="header__burger" type="button" onClick={onBurgerButtonClick}></button>
                         </div>
                     }
@@ -41,8 +41,8 @@ export default function Header({ onBurgerButtonClick }) {
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
-                            <HeaderNavigation />
-                            <HeaderAccountLink />
+                            <HeaderNavigation/>
+                            <HeaderAccountLink/>
                             <button className="header__burger" type="button" onClick={onBurgerButtonClick}></button>
                         </div>
                     }
@@ -52,14 +52,13 @@ export default function Header({ onBurgerButtonClick }) {
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
-                            <HeaderNavigation />
-                            <HeaderAccountLink />
+                            <HeaderNavigation/>
+                            <HeaderAccountLink/>
                             <button className="header__burger" type="button" onClick={onBurgerButtonClick}></button>
                         </div>
                     }
                 />
             </Routes>
-
         </header>
     )
 }
