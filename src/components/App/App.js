@@ -17,22 +17,22 @@ function App() {
         setSideMenuStatus(false);
     }
 
- return (
-     <div className='app'>
-         <Routes>
-             <Route
-                 path="/"
-                 element={
-                 <HeaderLayout onBurgerButtonClick={handleOpenSideMenu}/>}
-             />
-             <Route
-                 index
-                 element={<Main />}
-             />
-         </Routes>
-         <SideMenu isOpen={isSideMenuOpen} onClose={handleCloseSideMenu}/>
-     </div>
- )
+    return (
+        <div className='app'>
+            <Routes>
+                <Route
+                    path="/"
+                    element={<HeaderLayout onBurgerButtonClick={handleOpenSideMenu}/>}
+                >
+                    <Route
+                        index
+                        element={<Main/>}
+                    />
+                </Route>
+            </Routes>
+            <SideMenu isOpen={isSideMenuOpen} onClose={handleCloseSideMenu}/>
+        </div>
+    )
 }
 
 export default App;
