@@ -16,10 +16,14 @@ export default function Header({ onBurgerButtonClick }) {
                             <Link to="/" className="header__logo"></Link>
                             <ul className="header__links">
                                 <li className="header__links_item">
-                                    <Link to="/signup" className="header__link">Регистрация</Link>
+                                    <Link to="/signup" className="header__link">
+                                        Регистрация
+                                    </Link>
                                 </li>
                                 <li className="header__links_item">
-                                    <Link to="/signin" className="header__link header__link_type_login">Войти</Link>
+                                    <Link to="/signin" className="header__link header__link_type_login">
+                                        Войти
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

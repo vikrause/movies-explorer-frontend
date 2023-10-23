@@ -10,9 +10,10 @@
     font-weight: 400;
     line-height: 1.2;
     color: #fff;
+    letter-spacing: -0.04em;
     text-align: left;
     margin: 0;
-    padding: 0 0 26px 0;
+    padding: 0 0 23px 0;
     border-bottom: 1px solid #DADADA;
 }
 
@@ -20,7 +21,7 @@
     display: flex;
     gap: 40px;
     margin-top: 70px;
-    margin-bottom: 110px;
+    margin-bottom: 112px;
 }
 
 .about-project__description {
@@ -32,19 +33,18 @@
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 20px;
     font-weight: 400;
-    letter-spacing: -0.04em;
     margin: 0;
     padding: 0 0 26px 0;
     line-height: 1.2;
+    letter-spacing: -0.04em;
 }
 
 .about-project__description_text {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.43;
     font-weight: 400;
-    letter-spacing: -0.04em;
     margin: 0;
     padding: 0;
 }
@@ -75,6 +75,7 @@
     background: #303030;
     padding: 9px 0;
     width: 80%;
+    color: #fff;
 }
 
 .about-project__caption {
@@ -105,19 +106,44 @@
         padding: 90px 50px;
     }
 
+    .about-project__title {
+        padding-bottom: 23px;
+    }
+
+    .about-project__container {
+        margin-bottom: 94px;
+    }
+
     .about-project__description_title {
         padding-bottom: 22px;
     }
 
     .about-project__description_text {
         font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .about-project__weeks_one {
+        width: 21%;
+    }
+
+    .about-project__weeks_four {
+        width: 79%;
+    }
+
+    .about-project__caption_text_back_end {
+        width: 21%;
+    }
+
+    .about-project__caption_text_front_end {
+        width: 79%;
     }
 
 }
 
 @media screen and (max-width: 480px) {
     .about-project {
-        padding: 70px 18px;
+        padding: 69px 18px;
     }
 
     .about-project__title {
@@ -132,11 +158,21 @@
         margin-bottom: 60px;
     }
 
+    .about-project__duration {
+        padding-bottom: 10px;
+    }
     .about-project__description_title {
         font-size: 18px;
         padding-bottom: 16px;
     }
 
+    .about-project__description_text {
+        font-size: 11px;
+    }
+
+    .about-project__weeks {
+        font-size: 11px;
+    }
     .about-project__weeks_one {
         width: 36%;
         padding: 11px 0;
@@ -147,12 +183,15 @@
         padding: 11px 0;
     }
 
+
     .about-project__caption_text_back_end {
         width: 36%;
+        font-size: 11px;
     }
 
     .about-project__caption_text_front_end {
         width: 64%;
+        font-size: 11px;
     }
 
 }

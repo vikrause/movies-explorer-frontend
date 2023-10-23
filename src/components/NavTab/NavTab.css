@@ -30,7 +30,7 @@
 @media screen and (max-width: 450px) {
     .nav-tab__list {
         gap: 6px;
-        padding-bottom: 18px;
+        padding-bottom: 13px;
     }
 
     .nav-tab__link {

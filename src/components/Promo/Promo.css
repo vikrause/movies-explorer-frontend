@@ -22,14 +22,14 @@
     padding-top: 160px;
     padding-bottom: 151px;
     color: #fff;
-    margin: 0 auto;
+    margin: 0;
     letter-spacing: -0.04em;
     max-width: 730px;
 }
 
 @media screen and (max-width: 768px) {
     .promo {
-        padding: 20px 30px 0;
+        padding: 20px 20px 0;
     }
 
     .promo__title {
@@ -37,6 +37,8 @@
         max-width: 680px;
         padding-top: 350px;
         padding-bottom: 314px;
+        letter-spacing: -.04em;
+        line-height: 1.3;
     }
 }
 
@@ -47,8 +49,8 @@
 
     .promo__title {
         font-size: 29px;
-        line-height: 37px;
+        line-height: 1.27;
         padding-top: 220px;
-        padding-bottom: 212px;
+        padding-bottom: 208px;
     }
 }
