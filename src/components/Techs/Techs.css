@@ -4,7 +4,7 @@
 }
 
 .techs__container {
-    padding: 100px 70px;
+    padding: 101px 70px;
     background-color: #272727;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .techs__description {
-    padding: 90px 0 100px;
+    padding: 90px 0 101px;
     display: flex;
     flex-direction: column;
     justify-content: center;

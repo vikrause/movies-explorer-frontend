@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import './App.css';
 import SideMenu from "../SideMenu/SideMenu";
 import Main from "../Main/Main";
-import HeaderLayout from "../HeaderLayout/HeaderLayout";
+import AppLayout from "../AppLayout/AppLayout";
 
 function App() {
     const [isSideMenuOpen, setSideMenuStatus] = useState(false);
@@ -22,7 +22,7 @@ function App() {
             <Routes>
                 <Route
                     path="/"
-                    element={<HeaderLayout onBurgerButtonClick={handleOpenSideMenu}/>}
+                    element={<AppLayout onBurgerButtonClick={handleOpenSideMenu}/>}
                 >
                     <Route
                         index
