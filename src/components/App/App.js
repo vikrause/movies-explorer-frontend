@@ -13,6 +13,7 @@ import Preloader from "../Preloader/Preloader";
 import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import NotFound from "../NotFound/NotFound";
 
 function App() {
     const [isSideMenuOpen, setSideMenuStatus] = useState(false);
@@ -95,6 +96,10 @@ function App() {
                         <Route
                             path="/signup"
                         element={<Register />}
+                        />
+                        <Route
+                            path="*"
+                        element={<NotFound />}
                         />
                     </Routes>
                     <SideMenu isOpen={isSideMenuOpen} onClose={handleCloseSideMenu}/>
