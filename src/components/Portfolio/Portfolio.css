@@ -36,6 +36,7 @@
     letter-spacing: -0.04em;
     display: flex;
     justify-content: space-between;
+    transition: opacity 0.5s;
 }
 
 .portfolio__item {

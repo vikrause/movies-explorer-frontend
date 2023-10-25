@@ -48,6 +48,7 @@
     line-height: 1.21;
     color: #fff;
     margin: 0;
+    transition: opacity 0.5s;
 }
 
 @media screen and (max-width: 768px) {

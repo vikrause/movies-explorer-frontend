@@ -1,0 +1,49 @@
+.auth-header {
+    width: 396px;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 70px 0 40px;
+}
+
+.auth-header__logo {
+    background-image: url("../../images/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 38px;
+    width: 38px;
+}
+
+.auth-header__title {
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    color: #fff;
+    padding: 40px 0 0 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .auth-header {
+        padding: 232px 0 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .auth-header {
+        padding: 56px 0 80px;
+        width: 260px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .auth-header__title {
+        padding: 50px 0 0 0;
+    }
+}

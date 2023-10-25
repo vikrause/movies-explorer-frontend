@@ -2,7 +2,7 @@ import {Link, Route, Routes} from "react-router-dom";
 
 import React from "react";
 import './Header.css'
-import HeaderNavigation from "../HeaderNavigation/HeaderNavigation";
+import Navigation from "../Navigation/Navigation";
 import HeaderAccountLink from "../HeaderAccountLink/HeaderAccountLink";
 
 export default function Header({ onBurgerButtonClick }) {
@@ -16,12 +16,12 @@ export default function Header({ onBurgerButtonClick }) {
                             <Link to="/" className="header__logo"></Link>
                             <ul className="header__links">
                                 <li className="header__links_item">
-                                    <Link to="/signup" className="header__link">
+                                    <Link to="/signup" className="header__link hover-link">
                                         Регистрация
                                     </Link>
                                 </li>
                                 <li className="header__links_item">
-                                    <Link to="/signin" className="header__link header__link_type_login">
+                                    <Link to="/signin" className="header__link header__link_type_login hover-button">
                                         Войти
                                     </Link>
                                 </li>
@@ -34,9 +34,9 @@ export default function Header({ onBurgerButtonClick }) {
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
-                            <HeaderNavigation/>
+                            <Navigation/>
                             <HeaderAccountLink/>
-                            <button className="header__burger" type="button" onClick={onBurgerButtonClick}></button>
+                            <button className="header__burger hover-button" type="button" onClick={onBurgerButtonClick}></button>
                         </div>
                     }
                 />
@@ -45,7 +45,7 @@ export default function Header({ onBurgerButtonClick }) {
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
-                            <HeaderNavigation/>
+                            <Navigation/>
                             <HeaderAccountLink/>
                             <button className="header__burger" type="button" onClick={onBurgerButtonClick}></button>
                         </div>
@@ -56,7 +56,7 @@ export default function Header({ onBurgerButtonClick }) {
                     element={
                         <div className="header__item">
                             <Link to="/" className="header__logo"></Link>
-                            <HeaderNavigation/>
+                            <Navigation/>
                             <HeaderAccountLink/>
                             <button className="header__burger" type="button" onClick={onBurgerButtonClick}></button>
                         </div>

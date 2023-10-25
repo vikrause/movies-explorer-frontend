@@ -10,12 +10,12 @@ export default function Footer() {
                 <p className="footer__year">&copy; {new Date().getFullYear()}</p>
                 <ul className="footer__links">
                     <li className="footer__item">
-                        <a className="footer__link" href="" target="_blank" rel="noreferrer">
+                        <a className="footer__link hover-link" href="https://practicum.yandex.ru/" target="_blank" rel="noreferrer">
                             Яндекс.Практикум
                         </a>
                     </li>
                     <li className="footer__item">
-                        <a className="footer__link" href="" target="_blank" rel="noreferrer">
+                        <a className="footer__link hover-link" href="https://github.com/vikrause" target="_blank" rel="noreferrer">
                             Github
                         </a>
                     </li>

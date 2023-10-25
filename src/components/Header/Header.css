@@ -38,6 +38,7 @@
     line-height: 1.33;
     text-decoration: none;
     color: #fff;
+    transition: opacity 0.5s;
 }
 
 .header__link_type_login {
@@ -64,7 +65,7 @@
 
 @media screen and (max-width: 768px) {
     .header__item {
-        padding: 18px 30px;
+        padding: 17px 30px 19px;
     }
 
     .header__burger {
@@ -74,7 +75,7 @@
 
 @media screen and (max-width: 320px) {
     .header__item {
-        padding: 18px 14px;
+        padding: 17px 14px 19px;
     }
 
     .header__links {
@@ -91,6 +92,12 @@
         padding: 5px 12px;
         margin: 0;
         border-radius: 3px;
+    }
+
+    .header__burger {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
     }
 }
 

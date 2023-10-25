@@ -1,13 +1,14 @@
 .header-account-link {
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 14px;
-    line-height: 1.14;
+    line-height: 1.2;
     font-weight: 500;
     color: #fff;
     border-radius: 20px;
-    background-color: #272727;
+    background-color: #2F2F2F;
     text-decoration: none;
     padding: 8px 20px;
+    transition: opacity 0.5s;
 }
 
 .header-account-link_place_side {

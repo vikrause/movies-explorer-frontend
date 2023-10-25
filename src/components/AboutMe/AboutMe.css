@@ -68,6 +68,7 @@
     color: #fff;
     font-size: 14px;
     line-height: 1.21;
+    transition: opacity 0.5s;
 }
 
 .about-me__photo {
