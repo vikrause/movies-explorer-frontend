@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 360px);
     gap: 57px 30px;
+    justify-content: space-evenly;
 }
 
 .movies-card-list__button {
