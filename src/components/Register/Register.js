@@ -51,6 +51,8 @@ export default function Register() {
                                id="password-input"
                                required
                                placeholder="Ваш пароль"
+                               maxLength="30"
+                               minLength="6"
                         ></input>
                         <span className="register__text-error">Что-то пошло не так...</span>
                     </label>

@@ -65,6 +65,10 @@
     width: 350px;
 }
 
+.profile__input:focus  {
+    outline: none;
+}
+
 .profile__button-container {
     display: flex;
     flex-direction: column;

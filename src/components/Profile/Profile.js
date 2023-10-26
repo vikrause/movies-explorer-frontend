@@ -11,7 +11,7 @@ export default function Profile({ user }) {
     return (
         <main className="profile">
             <section className="profile__container">
-                <h2 className="profile__title">{`Привет, ${user.name}!`}</h2>
+                <h1 className="profile__title">{`Привет, ${user.name}!`}</h1>
                 <form className="profile__form" name="edit-profile-form" id="edit-profile-form" noValidate onSubmit={handleSubmit}>
                     <label className="profile__label">
                         Имя
@@ -22,6 +22,9 @@ export default function Profile({ user }) {
                                id="name-input"
                                required
                                value={user.name}
+                               placeholder="Ваше имя"
+                               maxLength="30"
+                               minLength="2"
                         ></input>
                     </label>
                     <label className="profile__label">
@@ -33,6 +36,9 @@ export default function Profile({ user }) {
                                id="email-input"
                                required
                                value={user.email}
+                               placeholder="Ваша почта"
+                               maxLength="30"
+                               minLength="2"
                         ></input>
                     </label>
                 </form>

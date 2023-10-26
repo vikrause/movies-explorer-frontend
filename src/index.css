@@ -2,4 +2,5 @@
 @import "./vendor/fonts/fonts.css";
 
 @import "./components/Common/Hover.css";
+@import "./components/Common/Body.css";
 
