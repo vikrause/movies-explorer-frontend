@@ -41,6 +41,10 @@
     box-sizing: border-box;
 }
 
+.login__input:focus {
+    outline: 1px solid #3DDC84;
+}
+
 @media screen and (max-width: 450px) {
     .login__form {
         width: 260px;

@@ -8,22 +8,22 @@ export default function MoviesCard({ movie, isLiked, onMovieLike }) {
             <img className="movies-card__img" alt={movie.nameRU} src={movie.thumbnail}/>
             {location.pathname === "/movies" ? (
                 <button
-                    className={`movie-card__action-button ${isLiked ? "movie-card__action-button_liked" : ""} hover-button`}
+                    className={`movies-card__action-button ${isLiked ? "movies-card__action-button_liked" : ""} hover-button`}
                     type="button"
                     aria-label="Сохранить"
                     onClick={onMovieLike}
                 >Сохранить</button>
             ) : (
                 <button
-                    className="movie-card__action-button movie-card__action-button_place_saved-movies hover-button"
+                    className="movies-card__action-button movies-card__action-button_place_saved-movies hover-button"
                     type="button"
                     aria-label="Удалить"
                 >
                 </button>
             )}
             <div className="movies-card__caption">
-                <p className="movies-card__name">{movie.nameRU}</p>
-                <p className="movie-card__duration">{movie.duration}</p>
+                <h2 className="movies-card__name">{movie.nameRU}</h2>
+                <p className="movies-card__duration">{movie.duration}</p>
 
             </div>
         </li>

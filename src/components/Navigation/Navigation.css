@@ -28,6 +28,7 @@
     line-height: 1.38;
     color: #fff;
     transition: opacity 0.5s;
+    cursor: pointer;
 }
 
 .header-navigation__link_place_side {

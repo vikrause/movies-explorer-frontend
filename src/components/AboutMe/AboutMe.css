@@ -30,7 +30,7 @@
     padding-right: 49px;
 }
 
-.about-me__description_name {
+.about-me__description-name {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 50px;
@@ -41,7 +41,7 @@
     letter-spacing: -0.04em;
 }
 
-.about-me__description_about {
+.about-me__description-about {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 18px;
@@ -51,7 +51,7 @@
     line-height: 1.11;
 }
 
-.about-me__description_text {
+.about-me__description-text {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 14px;
@@ -83,19 +83,19 @@
         padding: 90px 50px 91px;
     }
 
-    .about-me__description_name {
+    .about-me__description-name {
         font-size: 40px;
         padding: 0 0 16px 0;
         line-height: 1;
     }
 
-    .about-me__description_about {
+    .about-me__description-about {
         font-size: 12px;
         padding: 0 0 20px 0;
         line-height: 1.5;
     }
 
-    .about-me__description_text {
+    .about-me__description-text {
         font-size: 12px;
         padding: 0 0 87px 0;
         line-height: 1.5;
@@ -108,7 +108,7 @@
         max-height: 307px;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 560px) {
     .about-me {
         padding: 70px 18px;
     }
@@ -128,18 +128,18 @@
         padding-right: 0;
     }
 
-    .about-me__description_name {
+    .about-me__description-name {
         font-size: 30px;
         padding: 40px 0 20px 0;
     }
 
-    .about-me__description_about {
+    .about-me__description-about {
         font-size: 12px;
         padding: 0 0 20px 0;
         line-height: 1.5;
     }
 
-    .about-me__description_text {
+    .about-me__description-text {
         font-size: 12px;
         padding: 0 0 87px 0;
         line-height: 1.5;

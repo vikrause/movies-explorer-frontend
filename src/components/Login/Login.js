@@ -22,6 +22,9 @@ export default function Login() {
                                name="email"
                                id="email-input"
                                required
+                               maxLength="30"
+                               minLength="2"
+                               placeholder="Ваша почта"
                         ></input>
                     </label>
 
@@ -33,10 +36,11 @@ export default function Login() {
                                name="password"
                                id="password-input"
                                required
+                               placeholder="Ваш пароль"
                         ></input>
                     </label>
                 </form>
-                <AuthFooter buttonText={"Войти"} text={"Ещё не зарегистрированы?"} linkText={"Регистрация"}/>
+                <AuthFooter buttonText={"Войти"} text={"Ещё не зарегистрированы?"} path={"/signup"} linkText={"Регистрация"}/>
             </section>
         </main>
     )

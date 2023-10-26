@@ -32,7 +32,7 @@
     width: 250px;
 }
 
-.movie-card__duration {
+.movies-card__duration {
     background: #2F2F2F;
     border-radius: 3px;
     color: #8B8B8B;
@@ -46,7 +46,7 @@
     padding: 4px 0;
 }
 
-.movie-card__action-button {
+.movies-card__action-button {
     visibility: hidden;
     position: absolute;
     top: 14px;
@@ -66,7 +66,7 @@
     cursor: pointer;
 }
 
-.movie-card__action-button_liked {
+.movies-card__action-button_liked {
     background-image: url("../../images/icon__movie_like.svg");
     background-color: transparent;
     background-position: center center;
@@ -76,7 +76,7 @@
     font-size: 0;
 }
 
-.movie-card__action-button_place_saved-movies {
+.movies-card__action-button_place_saved-movies {
     background-image: url("../../images/icon__movie_delete.svg");
     background-position: center center;
     background-color: transparent;

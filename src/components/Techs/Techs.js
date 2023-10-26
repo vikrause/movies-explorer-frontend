@@ -7,10 +7,10 @@ export default function Techs() {
                 Технологии
             </h2>
             <div className="techs__description">
-                <h2 className="techs__description__title">
+                <h3 className="techs__description-title">
                     7 технологий
-                </h2>
-                <p className="techs__description__text">
+                </h3>
+                <p className="techs__description-text">
                     На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.
                 </p>
             </div>

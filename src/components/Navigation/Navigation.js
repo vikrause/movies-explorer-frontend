@@ -18,7 +18,7 @@ export default function Navigation({ isSideMenuOpen, onClose }) {
                         Фильмы
                     </Link>
                 </li>
-                <li className="navigation__links_item">
+                <li className="header-navigation__item">
                     <Link to="/saved-movies" className={`header-navigation__link ${isSideMenuOpen ? "header-navigation__link_place_side" : ""} ${location.pathname === "/saved-movies" && isSideMenuOpen ? "header-navigation__link_place_side-active" : ""} ${location.pathname === "/saved-movies" && !isSideMenuOpen ? "header-navigation__link-active" : ""} hover-link`} onClick={onClose}>
                         Сохранённые фильмы
                     </Link>

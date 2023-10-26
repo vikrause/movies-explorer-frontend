@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-.filter-checkbox__input_toggle {
+.filter-checkbox__input-toggle {
     display: none;
 }
 
@@ -47,11 +47,11 @@
     transform: translate(0, -50%);
 }
 
-.filter-checkbox__input_toggle:checked + .filter-checkbox__track {
+.filter-checkbox__input-toggle:checked + .filter-checkbox__track {
     background: #2BE080;
 }
 
-.filter-checkbox__input_toggle:checked + .filter-checkbox__track::before {
+.filter-checkbox__input-toggle:checked + .filter-checkbox__track::before {
     background: #fff;
     transform: translate(200%, -50%);
 }

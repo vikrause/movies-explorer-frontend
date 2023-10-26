@@ -13,19 +13,21 @@ export default function Header({ onBurgerButtonClick }) {
                     path="/"
                     element={
                         <div className="header__item">
-                            <Link to="/" className="header__logo"></Link>
-                            <ul className="header__links">
-                                <li className="header__links_item">
-                                    <Link to="/signup" className="header__link hover-link">
-                                        Регистрация
-                                    </Link>
-                                </li>
-                                <li className="header__links_item">
-                                    <Link to="/signin" className="header__link header__link_type_login hover-button">
-                                        Войти
-                                    </Link>
-                                </li>
-                            </ul>
+                            <Link to="/" className="header__logo hover-button"></Link>
+                            <nav className="header__menu">
+                                <ul className="header__list">
+                                    <li className="header__links">
+                                        <Link to="/signup" className="header__link hover-link">
+                                            Регистрация
+                                        </Link>
+                                    </li>
+                                    <li className="header__links">
+                                        <Link to="/signin" className="header__link header__link_type_login hover-button">
+                                            Войти
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     }
                 />

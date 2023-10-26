@@ -22,6 +22,9 @@ export default function Register() {
                                name="name"
                                id="name-input"
                                required
+                               maxLength="30"
+                               minLength="2"
+                               placeholder="Ваше имя"
                         ></input>
                     </label>
 
@@ -33,6 +36,9 @@ export default function Register() {
                                name="email"
                                id="email-input"
                                required
+                               maxLength="30"
+                               minLength="2"
+                               placeholder="Ваша почта"
                         ></input>
                     </label>
 
@@ -44,11 +50,12 @@ export default function Register() {
                                name="password"
                                id="password-input"
                                required
+                               placeholder="Ваш пароль"
                         ></input>
-                        <span className="register__input_text-error">Что-то пошло не так...</span>
+                        <span className="register__text-error">Что-то пошло не так...</span>
                     </label>
                 </form>
-                <AuthFooter buttonText={"Зарегистрироваться"} text={"Уже зарегистрированы?"} linkText={"Войти"}/>
+                <AuthFooter buttonText={"Зарегистрироваться"} text={"Уже зарегистрированы?"} path={"/signin"} linkText={"Войти"}/>
             </section>
         </main>
     )

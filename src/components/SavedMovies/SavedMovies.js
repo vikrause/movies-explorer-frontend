@@ -4,9 +4,9 @@ import SearchForm from "../SearchForm/SearchForm";
 
 export default function SavedMovies({ movies, isFilterOn, onFilterChange }) {
     return (
-        <section className="saved-movies">
+        <main className="saved-movies">
             <SearchForm isFilterOn={isFilterOn} onFilterChange={onFilterChange} />
             <MoviesCardList movies={movies}/>
-        </section>
+        </main>
     )
 }

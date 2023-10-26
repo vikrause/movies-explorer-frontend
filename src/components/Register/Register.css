@@ -41,11 +41,15 @@
     box-sizing: border-box;
 }
 
+.register__input:focus {
+    outline: 1px solid #3DDC84;
+}
+
 .register__input_error {
     color: #EE3465;
 }
 
-.register__input_text-error {
+.register__text-error {
     padding: 0;
     margin: 0;
     font-family: 'Inter', ‘Arial’, sans-serif;

@@ -1,7 +1,5 @@
 .app {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 100vw;
   background: #202020;
   font-family:'Inter', ‘Arial’, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +8,14 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+}
+
+.app__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
 }

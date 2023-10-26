@@ -29,7 +29,7 @@
     align-items: center;
 }
 
-.techs__description__title {
+.techs__description-title {
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 50px;
     font-weight: 400;
@@ -41,7 +41,7 @@
     padding: 0 0 26px 0;
 }
 
-.techs__description__text {
+.techs__description-text {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 14px;
@@ -83,7 +83,7 @@
         padding: 92px 50px;
     }
 
-    .techs__description__text {
+    .techs__description-text {
         font-size: 12px;
         line-height: 1.5;
     }
@@ -92,7 +92,7 @@
         padding: 80px 0 83px;
     }
 
-    .techs__description__title {
+    .techs__description-title {
         padding-bottom: 22px;
     }
 
@@ -119,13 +119,13 @@
         padding: 60px 0 50px;
     }
 
-    .techs__description__title {
+    .techs__description-title {
         font-size: 30px;
         line-height: 1.21;
         padding-bottom: 22px;
     }
 
-    .techs__description__text {
+    .techs__description-text {
         font-size: 11px;
         line-height: 1.45;
     }

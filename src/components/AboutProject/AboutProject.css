@@ -28,7 +28,7 @@
     max-width: 550px;
 }
 
-.about-project__description_title {
+.about-project__subtitle {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 20px;
@@ -39,7 +39,7 @@
     letter-spacing: -0.04em;
 }
 
-.about-project__description_text {
+.about-project__description-text {
     color: #fff;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 14px;
@@ -84,7 +84,7 @@
     justify-content: flex-start;
 }
 
-.about-project__caption_text {
+.about-project__caption-text {
     color: #8B8B8B;
     font-family: 'Inter', ‘Arial’, sans-serif;
     font-size: 14px;
@@ -93,11 +93,11 @@
     text-align: center;
 }
 
-.about-project__caption_text_back_end {
+.about-project__caption-text_back_end {
     width: 20%;
 }
 
-.about-project__caption_text_front_end {
+.about-project__caption-text_front_end {
     width: 80%;
 }
 
@@ -114,11 +114,11 @@
         margin-bottom: 94px;
     }
 
-    .about-project__description_title {
+    .about-project__subtitle {
         padding-bottom: 22px;
     }
 
-    .about-project__description_text {
+    .about-project__description-text {
         font-size: 12px;
         line-height: 1.5;
     }
@@ -161,12 +161,12 @@
     .about-project__duration {
         padding-bottom: 10px;
     }
-    .about-project__description_title {
+    .about-project__subtitle {
         font-size: 18px;
         padding-bottom: 16px;
     }
 
-    .about-project__description_text {
+    .about-project__description-text {
         font-size: 11px;
     }
 

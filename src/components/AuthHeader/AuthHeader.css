@@ -16,6 +16,8 @@
     background-size: cover;
     height: 38px;
     width: 38px;
+    cursor: pointer;
+    transition: opacity 0.5s;
 }
 
 .auth-header__title {

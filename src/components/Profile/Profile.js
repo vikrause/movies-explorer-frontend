@@ -1,6 +1,8 @@
 import "./Profile.css"
+import {useNavigate} from "react-router-dom";
 
 export default function Profile({ user }) {
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -38,7 +40,7 @@ export default function Profile({ user }) {
                     <button className="profile__button hover-link" type="submit">
                         Редактировать
                     </button>
-                    <button className="profile__button profile__button_type_exit hover-link" type="submit">
+                    <button className="profile__button profile__button_type_exit hover-link" type="submit" onClick={() => navigate("/")}>
                         Выйти из аккаунта
                     </button>
                 </div>

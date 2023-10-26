@@ -9,7 +9,7 @@
     flex-direction: column;
 }
 
-.search-form__form_container {
+.search-form__container {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -29,6 +29,10 @@
     border-radius: 8px;
     padding-left: 20px;
     width: 100%;
+}
+
+.search-form__search:focus {
+    outline: 1px solid #3DDC84;
 }
 
 .search-form__button {

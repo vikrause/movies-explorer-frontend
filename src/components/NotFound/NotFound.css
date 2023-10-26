@@ -46,6 +46,7 @@
     padding: 184px 0 0 0;
     display: block;
     margin: 0 auto;
+    transition: opacity 0.5s;
 }
 
 @media screen and (max-width: 768px) {
