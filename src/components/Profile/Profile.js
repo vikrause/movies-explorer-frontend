@@ -5,7 +5,7 @@ import {useContext, useEffect, useState} from "react";
 import {validateEmail, validateName} from "../../utils/formValidation"
 import {useLocation} from "react-router-dom";
 
-export default function Profile({ onSignOut, onUpdateUser, isCompleted, errorsFromApi }) {
+export default function Profile({ onSignOut, onUpdateUser, isCompleted, errorsFromApi, isLoading }) {
 
     const { values, handleChange, isValid, setValues, setIsValid } =
         useFormValidation();
@@ -51,6 +51,7 @@ export default function Profile({ onSignOut, onUpdateUser, isCompleted, errorsFr
                                name="name"
                                id="name-input"
                                required
+                               disabled={isLoading}
                                value={values.name || ""}
                                onChange={handleChange}
                                placeholder="Ваше имя"
@@ -67,6 +68,7 @@ export default function Profile({ onSignOut, onUpdateUser, isCompleted, errorsFr
                                name="email"
                                id="email-input"
                                required
+                               disabled={isLoading}
                                value={values.email || ""}
                                onChange={handleChange}
                                placeholder="Ваш email"

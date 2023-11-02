@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 import {validateEmail} from "../../utils/formValidation";
 
 
-export default function Login({onLogin, isLoggedIn, errorsFromApi}) {
+export default function Login({onLogin, isLoggedIn, errorsFromApi, isLoading}) {
     const { values, handleChange, errors, isValid } = useFormValidation();
 
     function handleSubmit(e) {
@@ -32,6 +32,7 @@ export default function Login({onLogin, isLoggedIn, errorsFromApi}) {
                                id="email-input"
                                required
                                maxLength="30"
+                               disabled={isLoading}
                                minLength="2"
                                placeholder="Ваша почта"
                                value={values.email || ''}
@@ -46,6 +47,7 @@ export default function Login({onLogin, isLoggedIn, errorsFromApi}) {
                                type="password"
                                name="password"
                                id="password-input"
+                               disabled={isLoading}
                                required
                                placeholder="Ваш пароль"
                                value={values.password || ''}

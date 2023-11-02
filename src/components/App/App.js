@@ -284,6 +284,7 @@ function App() {
                                     onLogin={login}
                                     isLoggedIn={isLoggedIn}
                                     errorsFromApi={errorsFromApi}
+                                    isLoading={isLoading}
                                 />
                             }
                         />
@@ -294,6 +295,7 @@ function App() {
                                     onRegister={register}
                                     isLoggedIn={isLoggedIn}
                                     errorsFromApi={errorsFromApi}
+                                    isLoading={isLoading}
                                 />
                             }
                         />

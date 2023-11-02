@@ -8,12 +8,12 @@ import {MOVIES_PAGE} from "../../utils/constants/constants";
 
 export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchError, isLoading, onMovieDelete }) {
     const [moviesRenderParams, setMoviesRenderParams] = useState({});
-    const [isFilterOn, setFilterOn] = useState(false);
+    const [isFilterOn, setIsFilterOn] = useState(false);
     const [foundMovies, setFoundMovies] = useState([]);
     const [moviesToRender, setMoviesToRender] = useState([]);
     const [isMoviesNotFound, setMoviesNotFound] = useState(false);
     const [movies, setMovies] = useState([]);
-    const [isSearching, setSearching] = useState(false);
+    const [isSearching, setIsSearching] = useState(false);
     let size = useResize();
 
     const searchMovie = useCallback(
@@ -34,13 +34,13 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
                 setMoviesNotFound(true);
             }
 
-            setSearching(false);
+            setIsSearching(false);
         }, [isFilterOn]
     );
 
     const onSearchSubmit = useCallback(
         async (searchQuery) => {
-            setSearching(true);
+            setIsSearching(true);
             setMoviesNotFound(false);
 
             if (movies.length) {
@@ -59,10 +59,10 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
 
     const onFilterClick = useCallback(
         (isChecked) => {
-            setFilterOn(isChecked);
+            setIsFilterOn(isChecked);
             setMoviesNotFound(false);
             const foundShortMovies = handleFilterShortMovie(foundMovies, isChecked, MOVIES_PAGE)
-            setSearching(false);
+            setIsSearching(false);
             setMoviesToRender(foundShortMovies);
         }, [foundMovies]
     )
@@ -72,7 +72,7 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
             const isMoviesFilterOn = JSON.parse(localStorage.getItem("isMoviesFilterOn"));
             const foundMovies = JSON.parse(localStorage.getItem("foundMovies"));
 
-            setFilterOn(isMoviesFilterOn);
+            setIsFilterOn(isMoviesFilterOn);
             setFoundMovies(foundMovies);
 
             if (foundMovies.length) {
@@ -132,7 +132,6 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
                 likedMovies={likedMovies}
                 onMovieDelete={onMovieDelete}
                 onMovieLike={onMovieLike}
-                isLoading={isLoading}
             />
         </main>
     )

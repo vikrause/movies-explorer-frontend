@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 import {useFormValidation} from "../../utils/hooks/useFormValidation";
 import {validateEmail, validateName} from "../../utils/formValidation";
 
-export default function Register({ onRegister, isLoggedIn, errorsFromApi }) {
+export default function Register({ onRegister, isLoggedIn, errorsFromApi, isLoading }) {
     const { values, handleChange, errors, isValid } = useFormValidation();
 
     function handleSubmit(e) {
@@ -29,6 +29,7 @@ export default function Register({ onRegister, isLoggedIn, errorsFromApi }) {
                                name="name"
                                id="name-input"
                                required
+                               disabled={isLoading}
                                maxLength="30"
                                minLength="2"
                                placeholder="Ваше имя"
@@ -46,6 +47,7 @@ export default function Register({ onRegister, isLoggedIn, errorsFromApi }) {
                                name="email"
                                id="email-input"
                                required
+                               disabled={isLoading}
                                maxLength="30"
                                minLength="2"
                                placeholder="Ваша почта"
@@ -66,6 +68,7 @@ export default function Register({ onRegister, isLoggedIn, errorsFromApi }) {
                                placeholder="Ваш пароль"
                                maxLength="30"
                                minLength="6"
+                               disabled={isLoading}
                                value={values.password || ''}
                                onChange={handleChange}
                         ></input>
