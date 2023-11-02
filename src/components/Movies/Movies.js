@@ -4,6 +4,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import useResize from "../../utils/hooks/useResize";
 import {useCallback, useEffect, useState} from "react";
 import {handleSearchMovie, handleFilterShortMovie} from "../../utils/moviesSearchAndFilterHandler";
+import {MOVIES_RENDER_MAP} from "../../utils/constants/constants";
 
 export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchError, onMovieDelete, isLoading }) {
     const [moviesRenderParams, setMoviesRenderParams] = useState({});
@@ -90,26 +91,16 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
 
     useEffect(() => {
         switch (true) {
-            case size >= 1280:
-                setMoviesRenderParams({
-                    'total': 12,
-                    'more': 3
-                });
+            case size >= MOVIES_RENDER_MAP.desktop.minWidth:
+                setMoviesRenderParams(MOVIES_RENDER_MAP.desktop.params);
 
                 break;
-            case size >= 768 && size < 1280:
-                setMoviesRenderParams({
-                    'total': 8,
-                    'more': 2
-                });
+            case size >= MOVIES_RENDER_MAP.tablet.minWidth:
+                setMoviesRenderParams(MOVIES_RENDER_MAP.tablet.params);
 
                 break;
             default:
-            case size < 768:
-                setMoviesRenderParams({
-                    'total': 5,
-                    'more': 2
-                });
+                setMoviesRenderParams(MOVIES_RENDER_MAP.default.params);
 
                 break;
         }

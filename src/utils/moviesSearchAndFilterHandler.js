@@ -1,3 +1,5 @@
+import {SHORT_MOVIE_DURATION} from "./constants/constants";
+
 export function handleSearchMovie(movies, searchQuery, saveResults= false) {
     const searchQueryFormatted = searchQuery.toLowerCase().trim();
     const result = movies.filter((movie) => {
@@ -20,5 +22,5 @@ export function handleFilterShortMovie(movies, isFilterOn, saveResults) {
         localStorage.setItem("isMoviesFilterOn", isFilterOn);
     }
 
-    return (isFilterOn) ? movies.filter((movie) => movie.duration <= 40) : movies;
+    return (isFilterOn) ? movies.filter((movie) => movie.duration <= SHORT_MOVIE_DURATION) : movies;
 }
