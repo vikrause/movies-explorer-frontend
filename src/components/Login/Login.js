@@ -1,14 +1,23 @@
 import "./Login.css"
 import AuthHeader from "../AuthHeader/AuthHeader";
 import AuthFooter from "../AuthFooter/AuthFooter";
+import {useFormValidation} from "../../utils/hooks/useFormValidation";
+import { Navigate } from "react-router-dom";
+import {validateEmail} from "../../utils/formValidation";
 
-export default function Login() {
+
+export default function Login({onLogin, isLoggedIn, errorsFromApi}) {
+    const { values, handleChange, errors, isValid } = useFormValidation();
 
     function handleSubmit(e) {
         e.preventDefault();
+        onLogin(values);
     }
 
-    return (
+
+    return isLoggedIn ? (
+        <Navigate to="/" replace />
+    ) : (
         <main className="login">
             <section className="login__container">
                 <AuthHeader title={"Рады видеть!"} />
@@ -25,9 +34,11 @@ export default function Login() {
                                maxLength="30"
                                minLength="2"
                                placeholder="Ваша почта"
+                               value={values.email || ''}
+                               onChange={handleChange}
                         ></input>
+                        <span className="login__input_error">{validateEmail(values.email).message}</span>
                     </label>
-
                     <label className="login__label">
                         Пароль
                         <input className="login__input"
@@ -37,10 +48,30 @@ export default function Login() {
                                id="password-input"
                                required
                                placeholder="Ваш пароль"
+                               value={values.password || ''}
+                               onChange={handleChange}
                         ></input>
+                        <span className="login__input_error">
+                            {errors.password}
+                        </span>
+                        <span className="login__input_error-api">
+                            {errorsFromApi.register.message === 'Failed to fetch'
+                                ? 'При попытке входа произошла ошибка'
+                                : errorsFromApi.register.errorText}
+                        </span>
                     </label>
+                    <AuthFooter
+                        buttonText={"Войти"}
+                        text={"Ещё не зарегистрированы?"}
+                        path={"/signup"}
+                        linkText={"Регистрация"}
+                        isButtonDisabled={
+                            !isValid ||
+                            validateEmail(values.email).invalid ||
+                            errors.password
+                        }
+                    />
                 </form>
-                <AuthFooter buttonText={"Войти"} text={"Ещё не зарегистрированы?"} path={"/signup"} linkText={"Регистрация"}/>
             </section>
         </main>
     )

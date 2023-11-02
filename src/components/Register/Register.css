@@ -49,6 +49,10 @@
     color: #EE3465;
 }
 
+.register__input_error-pass {
+    color: #EE3465;
+}
+
 .register__text-error {
     padding: 0;
     margin: 0;

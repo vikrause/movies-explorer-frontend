@@ -1,14 +1,21 @@
 import "./Register.css"
 import AuthHeader from "../AuthHeader/AuthHeader";
 import AuthFooter from "../AuthFooter/AuthFooter";
+import { Navigate } from "react-router-dom";
+import {useFormValidation} from "../../utils/hooks/useFormValidation";
+import {validateEmail, validateName} from "../../utils/formValidation";
 
-export default function Register() {
+export default function Register({ onRegister, isLoggedIn, errorsFromApi }) {
+    const { values, handleChange, errors, isValid } = useFormValidation();
 
     function handleSubmit(e) {
         e.preventDefault();
+        onRegister(values);
     }
 
-    return (
+    return isLoggedIn ? (
+        <Navigate to="/" replace />
+    ) : (
         <main className="register">
             <section className="register__container">
                 <AuthHeader title={"Добро пожаловать!"} />
@@ -25,7 +32,10 @@ export default function Register() {
                                maxLength="30"
                                minLength="2"
                                placeholder="Ваше имя"
+                               value={values.name || ''}
+                               onChange={handleChange}
                         ></input>
+                        <span className="register__input_error">{validateName(values.name).message}</span>
                     </label>
 
                     <label className="register__label">
@@ -39,12 +49,15 @@ export default function Register() {
                                maxLength="30"
                                minLength="2"
                                placeholder="Ваша почта"
+                               value={values.email || ''}
+                               onChange={handleChange}
                         ></input>
+                        <span className="register__input_error">{validateEmail(values.email).message}</span>
                     </label>
 
                     <label className="register__label">
                         Пароль
-                        <input className="register__input register__input_error"
+                        <input className={`register__input ${errors.password && "register__input_error-pass"}`}
                                form="register"
                                type="password"
                                name="password"
@@ -53,11 +66,31 @@ export default function Register() {
                                placeholder="Ваш пароль"
                                maxLength="30"
                                minLength="6"
+                               value={values.password || ''}
+                               onChange={handleChange}
                         ></input>
-                        <span className="register__text-error">Что-то пошло не так...</span>
+                        <span className="register__input_error">
+                            {errors.password}
+                        </span>
+                        <span className="register__input_error-api">
+                            {errorsFromApi.register.message === 'Failed to fetch'
+                            ? 'При регистрации произошла ошибка'
+                            : errorsFromApi.register.errorText}
+                        </span>
                     </label>
+                    <AuthFooter
+                        buttonText={"Зарегистрироваться"}
+                        text={"Уже зарегистрированы?"}
+                        path={"/signin"}
+                        linkText={"Войти"}
+                        isButtonDisabled={
+                            !isValid ||
+                            validateEmail(values.email).invalid ||
+                            validateName(values.name).invalid ||
+                            errors.password
+                        }
+                    />
                 </form>
-                <AuthFooter buttonText={"Зарегистрироваться"} text={"Уже зарегистрированы?"} path={"/signin"} linkText={"Войти"}/>
             </section>
         </main>
     )

@@ -49,6 +49,14 @@
     cursor: pointer;
 }
 
+.search-form__text-error {
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-size: 14px;
+    color: #b00f20;
+    margin: 0;
+    padding:0;
+}
+
 @media screen and (max-width: 768px) {
     .search-form {
         padding: 80px 30px 10px;

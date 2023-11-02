@@ -34,7 +34,17 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+.movies-card-list__error {
+    display: block;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 890px) {
     .movies-card-list {
         padding: 71px 30px 80px;
     }
