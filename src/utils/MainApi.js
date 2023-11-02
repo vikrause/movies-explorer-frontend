@@ -13,6 +13,7 @@ class MainApi {
     getUserInfo() {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'GET',
+            credentials: 'include',
             headers: this._headers,
         }).then((res) => {
             return this._checkResponse(res);
@@ -22,6 +23,7 @@ class MainApi {
     updateUserInfo(email, name) {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
+            credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
                 email: email,
@@ -35,6 +37,7 @@ class MainApi {
     getMoviesByOwner() {
         return fetch(`${this._baseUrl}/movies`, {
             method: 'GET',
+            credentials: 'include',
             headers: this._headers
         }).then((res) => {
             return this._checkResponse(res);
@@ -44,6 +47,7 @@ class MainApi {
     createMovies(movie) {
         return fetch(`${this._baseUrl}/movies`, {
             method: 'POST',
+            credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
                 country: movie.country,
@@ -66,6 +70,7 @@ class MainApi {
     deleteMovie(id) {
         return fetch(`${this._baseUrl}/movies/${id}`, {
             method: 'DELETE',
+            credentials: 'include',
             headers: this._headers,
         }).then((res) => {
             return this._checkResponse(res);
@@ -75,6 +80,7 @@ class MainApi {
     register(name, email, password) {
         return fetch(`${this._baseUrl}/signup`, {
             method: 'POST',
+            credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
                 name,
@@ -90,6 +96,7 @@ class MainApi {
         return fetch(`${this._baseUrl}/signin`, {
             method: 'POST',
             headers: this._headers,
+            credentials: 'include',
             body: JSON.stringify({
                 email: email,
                 password: password
@@ -102,6 +109,7 @@ class MainApi {
     signOut() {
         return fetch(`${this._baseUrl}/signout`, {
             method: 'POST',
+            credentials: 'include',
             headers: this._headers,
         }).then((res) => {
             return this._checkResponse(res);
