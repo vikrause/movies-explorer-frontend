@@ -5,7 +5,7 @@ import useResize from "../../utils/hooks/useResize";
 import {useCallback, useEffect, useState} from "react";
 import {handleSearchMovie, handleFilterShortMovie} from "../../utils/moviesSearchAndFilterHandler";
 
-export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchError, onMovieDelete }) {
+export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchError, onMovieDelete, isLoading }) {
     const [moviesRenderParams, setMoviesRenderParams] = useState({});
     const [isFilterOn, setIsFilterOn] = useState(false);
     const [foundMovies, setFoundMovies] = useState([]);
@@ -131,6 +131,7 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
                 likedMovies={likedMovies}
                 onMovieDelete={onMovieDelete}
                 onMovieLike={onMovieLike}
+                isLoading={isLoading}
             />
         </main>
     )
