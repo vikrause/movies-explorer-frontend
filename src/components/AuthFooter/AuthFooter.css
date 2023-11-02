@@ -29,6 +29,12 @@
     cursor: pointer;
 }
 
+.auth-footer__button:disabled {
+    transition: none;
+    opacity: 0.5;
+    cursor: inherit;
+}
+
 .auth-footer__text-container {
     display: flex;
     justify-content: center;
