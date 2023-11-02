@@ -3,103 +3,65 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
 import {useCallback, useEffect, useState} from "react";
 import {handleSearchMovie, handleFilterShortMovie} from "../../utils/moviesSearchAndFilterHandler";
-import {SAVED_MOVIES_PAGE} from "../../utils/constants/constants";
+import {useLocation} from "react-router-dom";
 
 export default function SavedMovies({ likedMovies, onMovieDelete }) {
     const [moviesToRender, setMoviesToRender] = useState([]);
-    const [filteredCards, setFilteredCards] = useState([]);
     const [isFilterOn, setFilter] = useState(false);
+    const [savedSearchQuery, setSavedSearchQuery] = useState('');
     const [isMoviesNotFound, setMoviesNotFound] = useState(false);
     const [isSearching, setSearching] = useState(false);
+    const location = useLocation();
 
     const onSearchSubmit = useCallback(
         (searchQuery) => {
-            setMoviesNotFound(false);
-            setSearching(true);
-
-            if (likedMovies.length) {
-                const found = handleSearchMovie(likedMovies, searchQuery, SAVED_MOVIES_PAGE);
-                setFilteredCards(found);
-
-                if (found.length) {
-                    const filtered = handleFilterShortMovie(found, isFilterOn, SAVED_MOVIES_PAGE);
-                    setMoviesToRender(filtered);
-
-                    if (!filtered.length) {
-                        setMoviesNotFound(true);
-                    }
-                } else {
-                    setMoviesNotFound(true);
-                    setMoviesToRender(found);
-                }
-            } else {
-                setMoviesNotFound(true);
-            }
-
-            setSearching(false);
+            setSavedSearchQuery(searchQuery);
         },
-        [likedMovies, isFilterOn]
+        []
     );
 
     const onFilterClick = useCallback(
         (isChecked) => {
             setFilter(isChecked);
-            setMoviesNotFound(false);
-
-            const filtered = handleFilterShortMovie(filteredCards, isChecked, SAVED_MOVIES_PAGE);
-            setMoviesToRender(filtered);
-
-            if (!filtered.length) {
-                setMoviesNotFound(true);
-            }
         },
-        [filteredCards]
+        []
     );
 
     useEffect(() => {
         setMoviesNotFound(false);
-        const filter = JSON.parse(localStorage.getItem("isSavedMoviesFilterOn"));
-        const searchQuery = localStorage.getItem("savedMoviesSearchQuery");
+        setSearching(true);
 
-        switch (true) {
-            case (searchQuery && filter):
-                setFilter(filter);
+        let movieListToFilter = likedMovies;
+        let resultMovieList = likedMovies;
 
-                const found = handleSearchMovie(likedMovies, searchQuery, SAVED_MOVIES_PAGE);
-                setFilteredCards(found);
+        if (savedSearchQuery) {
+            const found = handleSearchMovie(likedMovies, savedSearchQuery);
+            movieListToFilter = found;
+            resultMovieList = found;
 
-                if (found.length) {
-                    const filtered = handleFilterShortMovie(found, filter, SAVED_MOVIES_PAGE);
-                    setMoviesToRender(filtered);
-
-                    if (!filtered.length) {
-                        setMoviesNotFound(true);
-                    }
-                } else {
-                    setMoviesNotFound(true);
-                    setMoviesToRender(found);
-                }
-
-                break;
-            case (!searchQuery && filter):
-                setFilteredCards(likedMovies);
-                setFilter(filter);
-
-                const filtered = handleFilterShortMovie(likedMovies, filter, SAVED_MOVIES_PAGE);
-                setMoviesToRender(filtered);
-
-                if (!filtered.length) {
-                    setMoviesNotFound(true);
-                }
-
-                break;
-            default:
-                setMoviesToRender(likedMovies);
-                setFilteredCards(likedMovies);
-
-                break;
+            if (!found.length) {
+                setMoviesNotFound(true);
+            }
         }
-    }, [likedMovies]);
+
+        if (isFilterOn) {
+            const filtered = handleFilterShortMovie(movieListToFilter, isFilterOn);
+            resultMovieList = filtered;
+            if (!filtered.length) {
+                setMoviesNotFound(true);
+            }
+        }
+
+        setMoviesToRender(resultMovieList);
+        setSearching(false);
+    }, [isFilterOn, likedMovies, savedSearchQuery]);
+    
+    useEffect(() => {
+        if (location.pathname === '/saved-movies') {
+            setSavedSearchQuery('');
+            setFilter(false);
+        }
+    }, [location]);
 
     return (
         <main className="saved-movies">

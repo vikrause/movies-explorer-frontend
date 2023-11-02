@@ -14,7 +14,6 @@ export default function Login({onLogin, isLoggedIn, errorsFromApi, isLoading}) {
         onLogin(values);
     }
 
-
     return isLoggedIn ? (
         <Navigate to="/" replace />
     ) : (
@@ -56,11 +55,12 @@ export default function Login({onLogin, isLoggedIn, errorsFromApi, isLoading}) {
                         <span className="login__input_error">
                             {errors.password}
                         </span>
-                        <span className="login__input_error-api">
-                            {errorsFromApi.register.message === 'Failed to fetch'
-                                ? 'При попытке входа произошла ошибка'
-                                : errorsFromApi.register.errorText}
+                        {errorsFromApi.login && (
+                            <span className="login__input_error-api">
+                            {'При попытке входа произошла ошибка. ' + errorsFromApi.login}
                         </span>
+                        )}
+
                     </label>
                     <AuthFooter
                         buttonText={"Войти"}

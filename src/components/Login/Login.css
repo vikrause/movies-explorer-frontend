@@ -49,6 +49,11 @@
     color: #EE3465;
 }
 
+.login__input_error-api {
+
+    color: #EE3465;
+}
+
 .login__input:focus {
     outline: 1px solid #3DDC84;
 }

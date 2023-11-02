@@ -3,7 +3,7 @@ import "./SearchForm.css"
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
-import {MOVIES_PAGE, SAVED_MOVIES_PAGE} from "../../utils/constants/constants";
+import {MOVIES_PAGE} from "../../utils/constants/constants";
 
 export default function SearchForm({ isFilterOn, onFilterChange, isSearching, onSearch }) {
     const location = useLocation()
@@ -13,10 +13,6 @@ export default function SearchForm({ isFilterOn, onFilterChange, isSearching, on
     useEffect(() => {
         if (location.pathname === MOVIES_PAGE && localStorage.getItem("moviesSearchQuery")) {
             setSearchQuery(localStorage.getItem("moviesSearchQuery"));
-        }
-
-        if (location.pathname === SAVED_MOVIES_PAGE && localStorage.getItem("savedMoviesSearchQuery")) {
-            setSearchQuery(localStorage.getItem("savedMoviesSearchQuery"));
         }
     }, [location.pathname]);
 

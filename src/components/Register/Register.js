@@ -75,11 +75,12 @@ export default function Register({ onRegister, isLoggedIn, errorsFromApi, isLoad
                         <span className="register__input_error">
                             {errors.password}
                         </span>
-                        <span className="register__input_error-api">
-                            {errorsFromApi.register.message === 'Failed to fetch'
-                            ? 'При регистрации произошла ошибка'
-                            : errorsFromApi.register.errorText}
+                        {errorsFromApi.register && (
+                            <span className="register__input_error-api">
+                            {'При попытке регистрации произошла ошибка. ' + errorsFromApi.register}
                         </span>
+                        )}
+
                     </label>
                     <AuthFooter
                         buttonText={"Зарегистрироваться"}

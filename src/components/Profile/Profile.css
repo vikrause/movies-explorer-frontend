@@ -87,6 +87,8 @@
     align-items: center;
     gap: 16px;
     padding-top: 220px;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .profile__success-msg {
@@ -94,8 +96,20 @@
     font-size: 13px;
     color: #2BE080;
     margin: 0;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+}
+
+.profile__error-api {
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-size: 13px;
+    color: #EE3465;
+    margin:  0;
     padding: 0;
     text-align: center;
+    position: absolute;
+    top: 100px;
 }
 
 .profile__button {

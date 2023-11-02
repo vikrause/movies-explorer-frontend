@@ -4,9 +4,8 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import useResize from "../../utils/hooks/useResize";
 import {useCallback, useEffect, useState} from "react";
 import {handleSearchMovie, handleFilterShortMovie} from "../../utils/moviesSearchAndFilterHandler";
-import {MOVIES_PAGE} from "../../utils/constants/constants";
 
-export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchError, isLoading, onMovieDelete }) {
+export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchError, onMovieDelete }) {
     const [moviesRenderParams, setMoviesRenderParams] = useState({});
     const [isFilterOn, setIsFilterOn] = useState(false);
     const [foundMovies, setFoundMovies] = useState([]);
@@ -18,11 +17,11 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
 
     const searchMovie = useCallback(
         (movies, searchQuery) => {
-            const foundSearchMovies = handleSearchMovie(movies, searchQuery, MOVIES_PAGE);
+            const foundSearchMovies = handleSearchMovie(movies, searchQuery, true);
             setFoundMovies(foundSearchMovies);
 
             if (foundSearchMovies.length) {
-                const foundShortMovies = handleFilterShortMovie(foundSearchMovies, isFilterOn, MOVIES_PAGE);
+                const foundShortMovies = handleFilterShortMovie(foundSearchMovies, isFilterOn, true);
 
                 if (!foundShortMovies.length) {
                     setMoviesNotFound(true);
@@ -61,7 +60,7 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
         (isChecked) => {
             setIsFilterOn(isChecked);
             setMoviesNotFound(false);
-            const foundShortMovies = handleFilterShortMovie(foundMovies, isChecked, MOVIES_PAGE)
+            const foundShortMovies = handleFilterShortMovie(foundMovies, isChecked, true)
             setIsSearching(false);
             setMoviesToRender(foundShortMovies);
         }, [foundMovies]
@@ -76,7 +75,7 @@ export default function Movies({ likedMovies, onMovieLike, onSearch, isSearchErr
             setFoundMovies(foundMovies);
 
             if (foundMovies.length) {
-                const filteredMovies = handleFilterShortMovie(foundMovies, isMoviesFilterOn, MOVIES_PAGE);
+                const filteredMovies = handleFilterShortMovie(foundMovies, isMoviesFilterOn, true);
                 setMoviesToRender(filteredMovies);
 
                 if (!filteredMovies.length) {

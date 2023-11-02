@@ -30,9 +30,9 @@ function App() {
     const [likedMovies, setLikedMovies] = useState([]);
     const [isSearchError, setIsSearchError] = useState(false)
     const [errorsFromApi, setErrorsFromApi] = useState({
-        login: {},
-        register: {},
-        profile: {}
+        login: "",
+        register: "",
+        profile: ""
     });
 
     const navigate = useNavigate();
@@ -94,7 +94,7 @@ function App() {
             if (userData) {
                 setCurrentUser(userData);
                 setIsCompleted(true);
-                setErrorsFromApi({ ...errorsFromApi, profile: {} });
+                setErrorsFromApi({ ...errorsFromApi, profile: "" });
             }
         } catch (err) {
             console.error(err);
@@ -125,9 +125,9 @@ function App() {
     useEffect(() => {
         setIsCompleted(false);
         setErrorsFromApi({
-            login: {},
-            register: {},
-            profile: {}
+            login: "",
+            register: "",
+            profile: ""
         });
     }, [location]);
 

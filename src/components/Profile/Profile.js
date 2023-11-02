@@ -81,6 +81,11 @@ export default function Profile({ onSignOut, onUpdateUser, isCompleted, errorsFr
                     {successMsg && (
                         <p className="profile__success-msg">Данные обновлены</p>
                     )}
+                    {errorsFromApi.profile &&  (
+                        <span className="profile__error-api">
+                            {'При попытке обновления профиля произошла ошибка. ' + errorsFromApi.profile}
+                        </span>
+                    )}
                     <button
                         className="profile__button profile__button_type_submit hover-link"
                         type="submit"
