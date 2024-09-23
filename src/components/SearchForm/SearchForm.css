@@ -24,7 +24,7 @@
     height: 50px;
     max-width: 1086px;
     background-color: #2F2F2F;
-    color: #8B8B8B;
+    color: #fff;
     border: none;
     border-radius: 8px;
     padding-left: 20px;
@@ -47,6 +47,14 @@
     margin: 0;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.search-form__text-error {
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-size: 14px;
+    color: #b00f20;
+    margin: 0;
+    padding:0;
 }
 
 @media screen and (max-width: 768px) {
